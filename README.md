@@ -12,6 +12,29 @@ npm i -g @digitalexpression/ace
 ace serve
 ```
 
+
+**Set .env to use it as a proxy:**
+
+```env
+OPENAI_API_KEY=sk-...
+OPENAI_BASE_URL=http://127.0.0.1:22324/v1
+```
+
+**Use ACE as MCP Server:**
+
+```json
+{
+    "mcpServers": {
+        "ace": {
+            "command": "ace",
+            "args": [
+                "serve"
+            ]
+        }
+    }
+}
+```
+
 ---
 
 ## 🧭 Overview
