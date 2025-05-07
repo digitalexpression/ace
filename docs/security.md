@@ -12,7 +12,10 @@ At Digital Expression, security, privacy, and responsible data handling are foun
 * **Least Privilege Access**: All services and data flows operate under minimal permissions.
 * **Zero Trust Model**: Every interaction and component is validated and scoped.
 * **No Self-Hosting**: Ensures continuous updates, vulnerability patches, and LLM improvements by maintaining a single, secured cloud infrastructure.
-
+* **System Sandboxing**: ACE runs commands within secure OS-level sandboxes:
+  * 🖥️ On macOS: using App Sandbox
+  * 🐧 On Linux: using Landlock LSM
+  * 🔐 File system access is restricted to the current working directory only
 ---
 
 ## 🧾 Data Handling
