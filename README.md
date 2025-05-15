@@ -88,6 +88,31 @@ flowchart LR
     ACEServer <--> LLM
 ```
 
+## 🏗️ Sequence diagram
+
+```mermaid
+sequenceDiagram
+    User->>+UITool: User question or query
+    UITool->>+ACEAgent: User question or query
+    
+    ACEAgent<<->>+System: Execute commands
+
+    ACEAgent->>+ACEServer: User input
+    ACEAgent->>+ACEServer: Local context
+
+    ACEServer->>+LLM: User input
+    ACEServer->>+LLM: Local context
+    ACEServer->>+LLM: Augumented context
+    ACEServer->>+LLM: Specialized instructions
+    LLM-->>-ACEServer: LLM response
+    ACEServer-->>-ACEAgent: ACE enhanced response
+    ACEAgent-->>-System: Write code
+    ACEAgent-->>System: Add/remove files
+    ACEAgent<<-->>System: Execute commands
+    ACEAgent-->>UITool: Text response
+    UITool-->>User: Text response
+```
+
 ---
 
 ## 🚀 Key Features
